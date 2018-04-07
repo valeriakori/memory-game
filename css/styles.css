@@ -1,0 +1,104 @@
+/* ----------------- GENERAL ----------------- */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* ----------------- TYPOGRAPHY ----------------- */
+
+h1 {
+  /* Need to pick font */
+}
+
+/* ----------------- LAYOUT ----------------- */
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Styles for the cards */
+
+.deck {
+  align-items: center;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 3em;
+  min-height: 680px;
+  padding: 32px;
+  width: 660px;
+}
+
+.card {
+  align-items: center;
+  background: #2e3d49;
+  border-radius: 8px;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 0;
+  height: 125px;
+  justify-content: center;
+  width: 125px;
+}
+
+.open {
+  background: #02b3e4;
+  cursor: default;
+  transform: rotateY(0);
+}
+
+.show {
+  font-size: 33px;
+}
+
+.match {
+  background: #02ccba;
+  cursor: default;
+  font-size: 33px;
+}
+
+/* Styles for the score panel */
+
+.score-panel {
+  margin-bottom: 10px;
+  text-align: left;
+  width: 345px;
+}
+
+.score-panel .stars {
+  display: inline-block;
+  margin: 0 5px 0 0;
+  padding: 0;
+}
+
+.score-panel .stars li {
+  display: inline-block;
+  list-style: none;
+}
+
+.score-panel .restart {
+  cursor: pointer;
+  float: right;
+}
