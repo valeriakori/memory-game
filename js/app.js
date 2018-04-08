@@ -3,6 +3,19 @@
 let cards = ["fas fa-bell", "fas fa-beer", "fas fa-book", " fas fa-bus", "fas fa-cloud", "fas fa-gamepad", "fas fa-futbol", "fas fa-lightbulb", "fas fa-bell", "fas fa-beer", "fas fa-book", " fas fa-bus", "fas fa-cloud", "fas fa-gamepad", "fas fa-futbol", "fas fa-lightbulb"];
 
 
+// Shuffle the cards
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+shuffleArray(cards);
+
+/* Display cards on the page,
+  loop through each card and create its html,
+  add each card's html to the page
+*/
 let deck = document.querySelector('.deck');
 for (let card of cards) {
   let cardContainer = document.createElement('li');
@@ -15,41 +28,6 @@ for (let card of cards) {
 
 
 
-
-
-/*
-Display the cards on the page
-  - shuffle the list of cards using the 'shuffle' method
-  - loop through each card and create its html
-  - add each card's HTML to the page
-*/
-
-// Shuffle function
-function shuffle(array) {
-    // Creates a defined variable and 2 undefined variables
-    var currentIndex = array.length,
-        temporaryValue,
-        randomIndex;
-    // While there are elements left on the array...
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-
-      /* Math.floor will round down the number to the previous full integer. ex.. console.log(Math.floor(30.65)); -- returns 30.
-
-      Math.random() -- returns a number between 0 and 1 but never 1
-
-      Therefore,
-      Math.floor(Math.random() * currentIndext);
-      will round down the result from a random number (between 0 and 1) multiply by the current currentIndex value.
-      */
-
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-}
 
 /*
 Setup the event listener for a card. If a card is clicked:
