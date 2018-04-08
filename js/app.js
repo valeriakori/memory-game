@@ -1,6 +1,20 @@
-/*
-List that holds all cards
-*/
+//List that holds all cards
+
+let cards = ["fas fa-bell", "fas fa-beer", "fas fa-book", " fas fa-bus", "fas fa-cloud", "fas fa-gamepad", "fas fa-futbol", "fas fa-lightbulb", "fas fa-bell", "fas fa-beer", "fas fa-book", " fas fa-bus", "fas fa-cloud", "fas fa-gamepad", "fas fa-futbol", "fas fa-lightbulb"];
+
+
+let deck = document.querySelector('.deck');
+for (let card of cards) {
+  let cardContainer = document.createElement('li');
+  cardContainer.setAttribute("class", "card");
+  let cardContent = document.createElement('span');
+  cardContent.setAttribute("class", `${card} show`)
+  cardContainer.appendChild(cardContent);
+  deck.appendChild(cardContainer);
+}
+
+
+
 
 
 /*
