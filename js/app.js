@@ -22,7 +22,6 @@ for (let i = 0; i < cards.length; i++) {
   const cardContent = document.createElement('span');
 
   cardContainer.classList.add('card');
-  cardContainer.classList.add('show');
   cardContent.classList.add('fas');
   cardContent.classList.add(cards[i]);
 
