@@ -78,13 +78,16 @@ p {
 }
 
 .show {
+  color: #2e3d49;
   font-size: 33px;
 }
 
 .match {
   background: #02ccba;
+  color: #fff;
   cursor: default;
   font-size: 33px;
+
 }
 
 /* Styles for the score panel */

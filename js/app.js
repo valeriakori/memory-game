@@ -1,7 +1,6 @@
 //List that holds all cards
 
-let cards = ["fas fa-bell", "fas fa-beer", "fas fa-book", " fas fa-bus", "fas fa-cloud", "fas fa-gamepad", "fas fa-futbol", "fas fa-lightbulb", "fas fa-bell", "fas fa-beer", "fas fa-book", " fas fa-bus", "fas fa-cloud", "fas fa-gamepad", "fas fa-futbol", "fas fa-lightbulb"];
-
+let cards = ["fa-bell", "fa-beer", "fa-book", "fa-bus", "fa-cloud", "fa-gamepad", "fa-futbol", "fa-lightbulb", "fa-bell", "fa-beer", "fa-book", "fa-bus", "fa-cloud", "fa-gamepad", "fa-futbol", "fa-lightbulb"];
 
 // Shuffle the cards
 function shuffleArray(array) {
@@ -10,22 +9,30 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
+function cardRotation(element) {
+  element.classList.toggle('match');
+}
 shuffleArray(cards);
 
-/* Display cards on the page,
-  loop through each card and create its html,
-  add each card's html to the page
-*/
 let deck = document.querySelector('.deck');
-for (let card of cards) {
-  let cardContainer = document.createElement('li');
-  cardContainer.setAttribute("class", "card");
-  let cardContent = document.createElement('span');
-  cardContent.setAttribute("class", `${card} show`)
+
+for (let i = 0; i < cards.length; i++) {
+  const cardContainer = document.createElement('li');
+  const cardContent = document.createElement('span');
+
+  cardContainer.classList.add('card');
+  cardContainer.classList.add('show');
+  cardContent.classList.add('fas');
+  cardContent.classList.add(cards[i]);
+
   cardContainer.appendChild(cardContent);
   deck.appendChild(cardContainer);
-}
 
+  cardContainer.addEventListener('click', function() {
+    cardRotation(cardContainer);
+  });
+};
 
 
 
